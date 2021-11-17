@@ -46,7 +46,7 @@
                     </div>
                 </div>
 
-                <a class="btn btn-warning" href="{{ route('export') }}">Export Transaction Request</a>
+                <a class="btn btn-warning" href="{{ route('export') }}">Export Transaction Response</a>
 
             </div>
             <table class='table table-bordered'>

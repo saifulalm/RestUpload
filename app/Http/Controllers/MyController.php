@@ -5,6 +5,8 @@
 namespace App\Http\Controllers;
 
 
+use App\Irs;
+
 class MyController extends  Controller
 {
 
@@ -28,7 +30,19 @@ class MyController extends  Controller
         $msisdn = $_GET['msisdn'];
         $kp = $_GET['kp'];
 
+        $data=array('idtrx'=>$clientid,'serverid'=>$serverid, 'tujuan'=>$msisdn,'kode'=>$kp,'rc'=>$rc,'msg'=>$msg);
 
+
+        $match = ['idtrx' => $clientid];
+        Irs::updateorcreate($match, ['tujuan' => $msisdn, 'kode' => $kp,'response'=>json_encode($data)]);
+
+
+
+        return response()->json([
+            'status' => '200',
+            'msg' => 'Success Save',
+            'created'=> 'saiful'
+        ], 200);
 
 
 }
