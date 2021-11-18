@@ -78,7 +78,7 @@
                             <td bgcolor="#ff0814" style="text-align: center;">{{$s->status}}</td>
                             @break
                             @case("Sukses")
-                            <td bgcolor="#fff016" style="text-align: center;">{{$s->status}}</td>
+                            <td bgcolor="#01ff00" style="text-align: center;">{{$s->status}}</td>
                             @break
                             @default
                             <td bgcolor="#f5faff" style="text-align: center;">{{$s->status}}</td>
