@@ -55,7 +55,7 @@ class UsersImport implements ToModel, WithHeadingRow
                 $status = "webreport";
                 break;
             default:
-                $status = "Gagal";
+                $status = "Pending";
 
 
         }

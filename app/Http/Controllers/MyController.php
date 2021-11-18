@@ -35,17 +35,17 @@ class MyController extends  Controller
         $data=array('callback'=>TRUE,'idtrx'=>$clientid,'serverid'=>$serverid, 'tujuan'=>$msisdn,'kode'=>$kp,'rc'=>$rc,'msg'=>$msg);
         switch ($rc) {
 
-            case 68:
-                $rc = "Pending";
+            case 2:
+                $rc = "Gagal";
                 break;
-            case 00:
+            case 1:
                 $rc = "Sukses";
                 break;
             case null:
                 $rc = "webreport";
                 break;
             default:
-                $rc = "Gagal";
+                $rc = "Pending";
 
 
         }
