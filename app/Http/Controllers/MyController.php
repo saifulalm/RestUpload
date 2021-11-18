@@ -33,10 +33,25 @@ class MyController extends  Controller
         $kp = $_GET['kp'];
 
         $data=array('callback'=>TRUE,'idtrx'=>$clientid,'serverid'=>$serverid, 'tujuan'=>$msisdn,'kode'=>$kp,'rc'=>$rc,'msg'=>$msg);
+        switch ($rc) {
 
+            case 68:
+                $rc = "Pending";
+                break;
+            case 00:
+                $rc = "Sukses";
+                break;
+            case null:
+                $rc = "webreport";
+                break;
+            default:
+                $rc = "Gagal";
+
+
+        }
 
         $match = ['idtrx' => $clientid];
-        Irs::updateorcreate($match, ['tujuan' => $msisdn, 'kode' => $kp,'response'=>json_encode($data)]);
+        Irs::updateorcreate($match, ['tujuan' => $msisdn, 'kode' => $kp,'status'=>$rc,'response'=>json_encode($data)]);
 
 
 
