@@ -24,4 +24,4 @@ Route::get('export', 'HomeController@export')->name('export');
 Route::post('import', 'HomeController@import')->name('import');
 Route::get('/v1/callback', 'MyController@callback')->name('callback');
 
-Route::get('/v1/dashboard', 'HomeController@index')->name('webdashboard');
+Route::get('/home', 'HomeController@index')->name('home');
