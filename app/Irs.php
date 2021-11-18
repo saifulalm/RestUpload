@@ -11,7 +11,4 @@ class Irs extends Model
     protected $fillable = ['idtrx','tujuan','kode','status','response'];
     protected $keyType = 'string';
 
-//    protected $casts = [
-//        'response' => 'array'
-//    ];
 }

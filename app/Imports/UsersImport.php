@@ -38,7 +38,7 @@ class UsersImport implements ToModel, WithHeadingRow
 
 
 
-    $idtrx="INVNJP".rand(0000,9999);
+    $idtrx="INV/NJP/".rand(0000,9999);
     $tujuan=$row['082298287723'];
     $kodeproduk=$row['tes5'];
         $id="SA0001";
@@ -55,15 +55,22 @@ class UsersImport implements ToModel, WithHeadingRow
 
 $status=$response['rc'];
 
-if ($status == 68){
+switch ($status){
+
+    case 68:
+        $status="Pending";
+        break;
+    case 00:
+        $status="Sukses";
+        break;
+    case null:
+        $status="webreport";
+        break;
+    default:
+        $status="Gagal";
 
 
-    $status="Pending";
-}
-else{
 
-
-    $status="??";
 }
 
 

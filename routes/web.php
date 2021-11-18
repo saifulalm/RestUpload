@@ -22,6 +22,6 @@ Route::get('importExportView', 'HomeController@importExportView');
 Route::get('export', 'HomeController@export')->name('export');
 
 Route::post('import', 'HomeController@import')->name('import');
-
+Route::get('/v1/callback', 'MyController@callback')->name('callback');
 
 Route::get('/home', 'HomeController@index')->name('home');

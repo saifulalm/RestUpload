@@ -32,7 +32,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+
         $trx = Irs::whereDate('created_at', Carbon::today())->get();
+
         return view('Home', ['trans' => $trx]);
 
     }
