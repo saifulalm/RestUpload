@@ -53,7 +53,7 @@ class HomeController extends Controller
      * @return BinaryFileResponse
      */
 
-    public function export()
+    public function export(): BinaryFileResponse
 
     {
 
