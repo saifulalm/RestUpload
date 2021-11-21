@@ -41,6 +41,8 @@ class UsersImport implements ToModel, WithHeadingRow
             ->asjson(true)
             ->get();
 
+
+
         $status = $response['rc'];
 
         switch ($status) {
@@ -48,12 +50,11 @@ class UsersImport implements ToModel, WithHeadingRow
             case 68:
                 $status = "Pending";
                 break;
+            case 1:
             case 00:
                 $status = "Sukses";
                 break;
-            case null:
-                $status = "webreport";
-                break;
+
             default:
                 $status = "Pending";
 
