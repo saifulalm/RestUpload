@@ -20,7 +20,7 @@
             <th style="text-align: center;">{{$s->created_at}}</th>
             <td style="text-align: center;">{{$s->idtrx}}</td>
             <td style="text-align: center;">{{$s->tujuan}}</td>
-            <td style="text-align: center;">{{$s->kodeproduk}}</td>
+            <td style="text-align: center;">{{$s->kode}}</td>
 
             @switch($s->status)
                 @case("Pending")
