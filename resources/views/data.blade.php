@@ -1,4 +1,4 @@
-<meta http-equiv="refresh" content="20">
+<meta http-equiv="refresh" content="30">
 <table class='table table-bordered'>
     <thead>
     <tr>
