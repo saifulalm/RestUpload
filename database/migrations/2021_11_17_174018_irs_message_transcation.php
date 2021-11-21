@@ -22,7 +22,7 @@ class IrsMessageTranscation extends Migration
 
             $table->string('status', '200');
 
-            $table->json('response')->nullable();
+            $table->string('response')->nullable();
             $table->timestamps();
         });
     }
