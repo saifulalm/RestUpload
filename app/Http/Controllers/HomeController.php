@@ -6,12 +6,16 @@ use App\Exports\UsersExport;
 use App\Imports\UsersImport;
 use App\Irs;
 use App\User;
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Session;
 use Maatwebsite\Excel\Facades\Excel;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class HomeController extends Controller
 {
@@ -46,7 +50,7 @@ class HomeController extends Controller
 
 
     /**
-     * @return Collection
+     * @return BinaryFileResponse
      */
 
     public function export()
@@ -59,7 +63,7 @@ class HomeController extends Controller
 
 
     /**
-     * @return Collection
+     * @return Application|RedirectResponse|Redirector
      */
 
     public function import(Request $request)
@@ -67,9 +71,6 @@ class HomeController extends Controller
     {
 
         // validasi
-        $this->validate($request, [
-            'file' => 'required|mimes:csv,xls,xlsx'
-        ]);
 
 
         $file = $request->file('file');
