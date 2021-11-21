@@ -6,7 +6,7 @@
         <th style="text-align: center;">Tanggal</th>
         <th style="text-align: center;">ID Transaksi</th>
         <th style="text-align: center;">Tujuan</th>
-        <th style="text-align: center;">Kode Transaksi</th>
+        <th style="text-align: center;">Kode</th>
         <th style="text-align: center;">Status</th>
         <th style="text-align: center;">Response</th>
         {{--                    Carbon::now()->toDateTimeString()--}}
