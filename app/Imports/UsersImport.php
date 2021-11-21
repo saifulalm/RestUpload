@@ -29,10 +29,10 @@ class UsersImport implements ToModel, WithHeadingRow
         $idtrx = "INV/NJP/" . $row['idtrx'];
         $tujuan = $row['tujuan'];
         $kodeproduk = $row['kode'];
-        $id = "NI0406";
-        $Username = "8DB49E";
-        $Password = "6CF64E";
-        $pin = "DC29IF";
+        $id = "SA0001";
+        $Username = "BA809A";
+        $Password = "208AB9";
+        $pin = "123456";
         $request = array('id' => $id, 'pin' => $pin, 'user' => $Username, 'pass' => $Password, 'kodeproduk' => $kodeproduk, 'tujuan' => $tujuan, 'idtrx' => $idtrx, 'counter' => 1);
 
         $response = Curl::to('http://112.78.139.26:2222/api/h2h')
