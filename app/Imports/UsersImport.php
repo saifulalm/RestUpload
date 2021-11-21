@@ -29,7 +29,7 @@ class UsersImport implements ToModel, WithHeadingRow
         $idtrx = "INV/NJP/" . $row['idtrx'];
         $tujuan = $row['tujuan'];
         $kodeproduk = $row['kode'];
-        $id = "SA0001";
+        $id = "NI0406";
         //NJP
         $Username="8DB49E";
         $Password="6CF64E";
