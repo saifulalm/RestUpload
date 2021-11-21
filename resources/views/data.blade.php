@@ -6,6 +6,7 @@
         <th style="text-align: center;">Tanggal</th>
         <th style="text-align: center;">ID Transaksi</th>
         <th style="text-align: center;">Tujuan</th>
+        <th style="text-align: center;">Kode Transaksi</th>
         <th style="text-align: center;">Status</th>
         <th style="text-align: center;">Response</th>
         {{--                    Carbon::now()->toDateTimeString()--}}
@@ -19,6 +20,7 @@
             <th style="text-align: center;">{{$s->created_at}}</th>
             <td style="text-align: center;">{{$s->idtrx}}</td>
             <td style="text-align: center;">{{$s->tujuan}}</td>
+            <td style="text-align: center;">{{$s->kodeproduk}}</td>
 
             @switch($s->status)
                 @case("Pending")
