@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <meta http-equiv="refresh" content="30">
     <div class="container">
 
         <div class="card bg-light mt-3">
