@@ -76,7 +76,7 @@ class UsersImport implements ToModel, WithHeadingRow
 
             'status' => $status,
 
-            'response' => json_encode($response),
+            'response' => $response['msg'],
 
         ]);
 

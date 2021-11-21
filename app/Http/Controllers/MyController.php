@@ -51,7 +51,7 @@ class MyController extends  Controller
         }
 
         $match = ['idtrx' => $clientid];
-        Irs::updateorcreate($match, ['tujuan' => $msisdn, 'kode' => $kp,'status'=>$rc,'response'=>json_encode($data)]);
+        Irs::updateorcreate($match, ['tujuan' => $msisdn, 'kode' => $kp,'status'=>$rc,'response'=>$msg]);
 
 
 
