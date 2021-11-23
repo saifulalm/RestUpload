@@ -26,7 +26,7 @@ class UsersImport implements ToModel, WithHeadingRow
     {
 
 
-        $idtrx = "INV/NJP/" . $row['idtrx'];
+        $idtrx = $row['idtrx'];
         $tujuan = $row['tujuan'];
         $kodeproduk = $row['kode'];
 
