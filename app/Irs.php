@@ -8,7 +8,7 @@ class Irs extends Model
 {
     protected $table = "irs_message_transaction";
     protected $primaryKey = 'idtrx';
-    protected $fillable = ['idtrx','tujuan','kode','status','response'];
+    protected $fillable = ['userid','idtrx','tujuan','kode','status','response'];
     protected $keyType = 'string';
 
 }
