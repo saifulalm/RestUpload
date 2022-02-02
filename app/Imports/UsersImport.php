@@ -6,6 +6,7 @@ namespace App\Imports;
 
 use App\Irs;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 use Ixudra\Curl\Facades\Curl;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
@@ -30,17 +31,37 @@ class UsersImport implements ToModel, WithHeadingRow
         $tujuan = $row['tujuan'];
         $kodeproduk = $row['kode'];
 
-        //NJP
-        $id='NI0406';
-        $Username="8DB49E";
-        $Password="6CF64E";
-        $pin='DC29IF';
 
-        //DEVELOPMENT
-//        $id = "SA0001";
-//        $Username = "BA809A";
-//        $Password = "208AB9";
-//        $pin = "123456";
+        switch (Auth::user()->id) {
+
+            case 1:
+                $id = 'NI0406';
+                $Username = "8DB49E";
+                $Password = "6CF64E";
+                $pin = 'DC29IF';
+
+                break;
+
+            case 2:
+
+                //DEVELOPMENT
+                $id = "SA0001";
+                $Username = "BA809A";
+                $Password = "208AB9";
+                $pin = "123456";
+                break;
+
+
+            default:
+
+                $id = "";
+                $Username = "";
+                $Password = "";
+                $pin = "";
+
+
+        }
+
         $request = array('id' => $id, 'pin' => $pin, 'user' => $Username, 'pass' => $Password, 'kodeproduk' => $kodeproduk, 'tujuan' => $tujuan, 'idtrx' => $idtrx, 'counter' => 1);
 
         $response = Curl::to('http://112.78.139.26:2222/api/h2h')
@@ -48,7 +69,6 @@ class UsersImport implements ToModel, WithHeadingRow
             ->withdata($request)
             ->asjson(true)
             ->get();
-
 
 
         $status = $response['rc'];
@@ -70,7 +90,9 @@ class UsersImport implements ToModel, WithHeadingRow
         }
 
 
+
         return new Irs([
+            'userid' => Auth::user()->id,
 
             'idtrx' => $idtrx,
 

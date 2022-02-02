@@ -14,9 +14,10 @@ class IrsMessageTranscation extends Migration
     public function up()
     {
         Schema::create('irs_message_transaction', function (Blueprint $table) {
-            $table->index('idtrx');
+
             $table->bigIncrements('no')->autoIncrement();
-            $table->string('idtrx')->primarykey();
+            $table->integer('userid')->primarykey();
+            $table->string('idtrx');
             $table->string('tujuan', '20');
             $table->string('kode', '200');
 

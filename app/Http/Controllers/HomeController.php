@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Maatwebsite\Excel\Facades\Excel;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
@@ -34,10 +35,12 @@ class HomeController extends Controller
      *
      * @return Renderable
      */
-    public function index()
+    public function index(): Renderable
     {
 
-        $trx = Irs::whereDate('created_at', Carbon::today())->get();
+        $trx = Irs::where('userid','=',Auth::user()->id)
+                    ->where('created_at', Carbon::today())
+                    ->get();
 
         return view('home', ['trans' => $trx]);
 
