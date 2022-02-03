@@ -34,7 +34,7 @@ class UsersImport implements ToModel, WithHeadingRow
 
         switch (Auth::user()->id) {
 
-            case 1:
+            case 5:
                 $id = 'NI0406';
                 $Username = "8DB49E";
                 $Password = "6CF64E";
@@ -42,7 +42,7 @@ class UsersImport implements ToModel, WithHeadingRow
 
                 break;
 
-            case 2:
+            case 4:
 
 
                 //DEVELOPMENT
@@ -53,13 +53,23 @@ class UsersImport implements ToModel, WithHeadingRow
                 break;
 
 
-            case 3:
+            case 7:
             //DEVELOPMENT
             $id = "NI0167";
             $Username = "C6EA39";
             $Password = "608923";
             $pin = "694H2G";
             break;
+
+
+
+            case 8:
+
+                $id = "NI0180";
+                $Username = "8EF04E";
+                $Password = "CDF626";
+                $pin = "8IB0D2";
+                break;
 
 
 
