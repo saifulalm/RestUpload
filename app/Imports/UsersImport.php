@@ -71,7 +71,7 @@ class UsersImport implements ToModel, WithHeadingRow
             ->asjson(true)
             ->get();
 
-dd($response);
+
         $status = $response['rc'];
 
         switch ($status) {
