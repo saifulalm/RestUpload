@@ -8,6 +8,7 @@ namespace App\Http\Controllers;
 use App\Irs;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class MyController extends  Controller
 {
@@ -50,7 +51,7 @@ class MyController extends  Controller
 
         }
 
-        $match = ['idtrx' => $clientid];
+        $match = ['userid'=>Auth::user()->id,'idtrx' => $clientid];
         Irs::updateorcreate($match, ['tujuan' => $msisdn, 'kode' => $kp,'status'=>$rc,'response'=>$msg]);
 
 

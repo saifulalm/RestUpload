@@ -43,9 +43,6 @@ class UsersImport implements ToModel, WithHeadingRow
                 break;
 
             case 4:
-
-
-                //DEVELOPMENT
                 $id = "SA0001";
                 $Username = "C24162";
                 $Password = "9DC814";
@@ -54,13 +51,12 @@ class UsersImport implements ToModel, WithHeadingRow
 
 
             case 7:
-            //DEVELOPMENT
-            $id = "NI0167";
-            $Username = "C6EA39";
-            $Password = "608923";
-            $pin = "694H2G";
-            break;
 
+                $id = "NI0167";
+                $Username = "C6EA39";
+                $Password = "608923";
+                $pin = "694H2G";
+                break;
 
 
             case 8:
@@ -72,9 +68,7 @@ class UsersImport implements ToModel, WithHeadingRow
                 break;
 
 
-
             default:
-
                 $id = "";
                 $Username = "";
                 $Password = "";
@@ -109,7 +103,6 @@ class UsersImport implements ToModel, WithHeadingRow
 
 
         }
-
 
 
         return new Irs([
