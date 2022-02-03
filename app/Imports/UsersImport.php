@@ -43,7 +43,7 @@ class UsersImport implements ToModel, WithHeadingRow
                 break;
 
             case 2:
-            case 3:
+
 
                 //DEVELOPMENT
                 $id = "SA0001";
@@ -51,6 +51,16 @@ class UsersImport implements ToModel, WithHeadingRow
                 $Password = "9DC814";
                 $pin = "I8712E";
                 break;
+
+
+            case 3:
+            //DEVELOPMENT
+            $id = "NI0167";
+            $Username = "C6EA39";
+            $Password = "608923";
+            $pin = "694H2G";
+            break;
+
 
 
             default:
