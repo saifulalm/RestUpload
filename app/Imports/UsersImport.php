@@ -64,14 +64,14 @@ class UsersImport implements ToModel, WithHeadingRow
         }
 
         $request = array('id' => $id, 'pin' => $pin, 'user' => $Username, 'pass' => $Password, 'kodeproduk' => $kodeproduk, 'tujuan' => $tujuan, 'idtrx' => $idtrx, 'counter' => 1);
-
+        dd($request);
         $response = Curl::to('http://112.78.139.26:2222/api/h2h')
             ->withHeaders(array('Accept: application/json', 'Content-Type: application/json'))
             ->withdata($request)
             ->asjson(true)
             ->get();
 
-
+dd($response);
         $status = $response['rc'];
 
         switch ($status) {
