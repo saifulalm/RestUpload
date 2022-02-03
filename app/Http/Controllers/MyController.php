@@ -51,7 +51,7 @@ class MyController extends  Controller
 
         }
 
-        $match = ['userid'=>Auth::user()->id,'idtrx' => $clientid];
+        $match = ['idtrx' => $clientid];
         Irs::updateorcreate($match, ['tujuan' => $msisdn, 'kode' => $kp,'status'=>$rc,'response'=>$msg]);
 
 
