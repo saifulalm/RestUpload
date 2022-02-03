@@ -35,12 +35,11 @@ class HomeController extends Controller
      *
      * @return Renderable
      */
-    public function index(): Renderable
+    public function index()
     {
 
         $trx = Irs::where('userid','=',Auth::user()->id)
-                    ->where('created_at', Carbon::today())
-                    ->get();
+                    ->whereDate( 'created_at', Carbon::today())->get();
 
         return view('home', ['trans' => $trx]);
 
